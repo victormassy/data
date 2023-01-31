@@ -33,15 +33,15 @@ int main(int argc, char *argv[]) {
     }
 
     variance /= count;
-    printf("Nb values: %d\n", count);
-    printf("Mean: %f\n", mean);
-    printf("Variance: %f\n", variance);
+    //printf("Nb values: %d\n", count);
+    printf("%f; ", mean/1000000);
+    //printf("Variance: %f\n", variance);
     double stddev = sqrt(variance);
     double margin_of_error = 1.96 * (stddev / sqrt(count));
     double lower_bound = mean - margin_of_error;
     double upper_bound = mean + margin_of_error;
-
-    printf("95%% Confidence interval: [%f, %f] seconds\n", lower_bound/1000000, upper_bound/1000000); 
+    printf("%f;", margin_of_error/1000000);
+    //printf("95%% Confidence interval: [%f, %f] seconds\n", lower_bound, upper_bound); 
     
     fclose(file);
     return 0;
